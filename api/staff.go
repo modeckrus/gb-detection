@@ -1,8 +1,31 @@
 package api
 
-import "github.com/gin-gonic/gin"
+import (
+	"gb-detection/recognition"
 
-func StaffGroup(r *gin.Engine, url string) {
+"github.com/gin-gonic/gin"
+
+)
+
+type StaffAPI struct {
+	db store.StaffDb
+}
+
+AddStaffEndPoint
+
+UpdateStaffEndPoint
+DeleteStaffEndPoint
+GetStaffEndPoint
+
+
+RecognizeStaffEndPoint
+
+FindStaffEndPoint
+
+
+
+func StaffGroup(r *gin.Engine, db store.StaffDb, imageDB store.imageDB, recognizer *recognition.Recognizer, url string) {
+	api := NewStaffAPI(db, imageDB, recognizer, url)
 	staff := r.Group("/api/staff")
 
 	{
