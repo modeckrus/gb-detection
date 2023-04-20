@@ -1,0 +1,14 @@
+server: 
+  host: 
+  port:  8080
+  timeout:
+    server: 5s
+    write: 10s
+    read: 10s
+    idle: 120s
+  auth_key: secret
+databases:
+  staffs: "./db/staffs.json"
+  images: "./db/images.json"
+  thirdpartys: "./db/thirdparties.json"
+  timerecords: "./db/timerecords.json"
